@@ -5,6 +5,11 @@ buttons.forEach((button) => {
   });
 });
 
+const playerScoreElement = document.querySelector('.playerScore');
+const computerScoreElement = document.querySelector('.computerScore');
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
   let choice;
@@ -31,7 +36,11 @@ function game(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock")
   ) {
     result.textContent = 'Ye, ye, you won.';
+    playerScore++;
+    playerScoreElement.textContent = playerScore;
   } else {
     result.textContent = 'lol, you LOST!';
+    computerScore++;
+    computerScoreElement.textContent = computerScore;
   }
 }

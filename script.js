@@ -1,3 +1,10 @@
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    game(button.className, getComputerChoice());
+  });
+});
+
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
   let choice;
@@ -6,7 +13,7 @@ function getComputerChoice() {
       choice = "rock";
       break;
     case 2:
-      choice = "raper";
+      choice = "paper";
       break;
     case 3:
       choice = "scissors";
@@ -14,27 +21,17 @@ function getComputerChoice() {
   return choice;
 }
 
-function getPlayerChoice() {
-  let playerChoice = prompt(
-    "choose your fate, I mean rock, paper or scissors?"
-  );
-  return playerChoice.toLowerCase();
-}
-
 function game(playerSelection, computerSelection) {
+  const result = document.querySelector('.rpsResult');
   if (playerSelection === computerSelection) {
-    console.log("It's a draw!");
+    result.textContent = `pssh, it's a draw!`;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "scissors" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")
   ) {
-    console.log("You win!");
+    result.textContent = 'Ye, ye, you won.';
   } else {
-    console.log("You lose!");
+    result.textContent = 'lol, you LOST!';
   }
-}
-
-for (i = 0; i < 5; i++) {
-  game(getPlayerChoice(), getComputerChoice());
 }

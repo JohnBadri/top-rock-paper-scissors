@@ -7,19 +7,13 @@ A straightforward implementation of the classic game "Rock, Paper, Scissors" usi
 ## Gameplay
 
 - Players can choose rock, paper, or scissors by clicking buttons.
-- The computer's choice is randomly generated.
+- The computer's is just another player. No real AI functionality
 - Scores are updated in real-time, with each round result displayed on the screen.
-
-## How to Play
-
-- Open the `index.html` file in a web browser.
-- Click one of the buttons to make a choice.
-- The game will display the outcome and update the score accordingly.
 
 ## Scoring
 
 - Win: You score a point.
-- Lose: The computer scores a point.
+- Lose: The 'computer' scores a point.
 - Draw: No points are awarded.
 
 ## Contributing
